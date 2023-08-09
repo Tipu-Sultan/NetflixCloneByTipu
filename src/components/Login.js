@@ -7,10 +7,11 @@ import { getAuth,
 import { firebaseConfig } from './firebaseConfig.js';
 import { useEffect, useState } from "react";
 
-const Login = () => {
+const Login = () => {    // create a new Login function
   initializeApp(firebaseConfig);
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location);
   const page = location.pathname === '/login' ? true:false;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -69,6 +70,9 @@ const Login = () => {
   const emailOnChangeHandler = (e) => {
     setEmail(e.target.value);
   };
+
+
+//start html login code
 
   return(
     <div className="login">
